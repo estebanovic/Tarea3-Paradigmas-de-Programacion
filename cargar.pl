@@ -1,2 +1,0 @@
-:- [Ejercicio_prolog].
-:- main.

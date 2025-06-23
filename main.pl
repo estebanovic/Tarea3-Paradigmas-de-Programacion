@@ -1,12 +1,15 @@
-% Archivo: main.pl
-main:-
-    write('wekito').
 
-% Hechos
-saludar(mundo).
-saludar(amigo).
+% Predicado principal
+main :-
+    write('Sistema de diagnóstico de Diabetes Tipo II'), nl,
+    write('-----------------------------------------'), nl, nl,
+    menu.
 
-% Una regla que actÃºa como punto de entrada o "main"
-inicio :-
-    write('¡Bienvenido al programa principal!'), nl,
-    write('Puedes hacer consultas como: saludar(X).'), nl.
+% Menú de opciones
+menu :-
+    repeat,
+    write('Opciones:'), nl,
+    write('1. Realizar cuestionario'), nl,
+    write('2. Salir'), nl,
+    write('Seleccione una opción (1-2): '),
+    read(Opcion).
