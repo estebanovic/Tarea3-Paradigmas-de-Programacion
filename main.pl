@@ -64,7 +64,7 @@ imc_ideal(Edad, hombre, 22.0, 28.0) :- Edad >= 65, Edad =< 100.
 
 % Predicado principal
 main :-
-    write('=== SISTEMA NUTRICIONAL - ==='), nl,nl,
+    write('=== SISTEMA NUTRICIONAL - MI MEJOR COMIDA ==='), nl,nl,
     menu.
 
 % Menú de opciones
@@ -109,7 +109,7 @@ menu_imc :-
     read(Altura),
     IMC is Peso / ((Altura / 100) * (Altura / 100)),
     write('RESULTADO:'), nl,
-    format('IMC: ~2f~n', [IMC]),
+    format('IMC: ~2f~n', [IMC]), % Muestra IMC redondeado al segundo decimal
     evaluar_imc_tradicional(IMC), nl, nl.
 
 evaluar_imc_tradicional(IMC) :-
@@ -136,7 +136,7 @@ menu_imc_edad_sexo :-
     read(Sexo),
     IMC is Peso / ((Altura / 100) * (Altura / 100)),
     write('RESULTADO:'), nl,
-    format('IMC: ~2f~n', [IMC]),
+    format('IMC: ~2f~n', [IMC]), % Muestra IMC redondeado al segundo decimal
     imc_ideal(Edad, Sexo, Min, Max),
     format('Rango ideal para su edad y sexo: ~2f - ~2f~n', [Min, Max]),
     evaluar_rango_imc(IMC, Min, Max),  nl, nl.
